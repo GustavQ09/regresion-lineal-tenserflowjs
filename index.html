@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Regresion Lineal / Linear Regression Model</title>
+  <!-- Import TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
+  <!-- Import tfjs-vis for visualization-->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <h1>Modelo de Regresion Lineal / Linear regression model - <br>
+          Demo Usando Redes Neuronales / Demo using Neural Networks </h1>
+    </div>
+    <hr >
+    <div>
+      <input type="button" class="button" value="Open visor" onclick="openVisor();" />
+      <input type="button" class="button" value="Restart" onclick="location.reload();" /><br>
+    </div>
+    <hr>
+    <div>
+      <div class="user-input">
+        URL json data:
+        <input type="text" id="url-json-data"
+          value="https://api.npoint.io/5f344864a6702d34e17c" /><br>
+        X variable: <input type="text" id="data-x-variable" value="NumeroDeCuartosPromedio" />
+        Y variable: <input type="text" id="data-y-variable"  value="Precio" />
+      </div>
+        <div>
+        <input type="button" class="button" value="Load and show data" onclick="showData();" /><br><br>
+        </div>   
+    </div>
+    <hr >
+    <div>
+      <input type="button" class="button" value="Start training" onclick="startTraining();" />
+      <input type="button" class="button" value="Stop training" onclick="stopTraining=true;" />
+      <input type="button" class="button" value="Save model" onclick="saveModel();" /><br>
+    </div>
+    <hr >
+    <div>
+      <input type="button" class="button" value="See inference curve" onclick="seeInferenceCurve();" /><br>
+    </div>
+    <hr >
+    <div>
+      <div class="user-input">
+        You can load your model if you have one previously trained to see the inference curve. The model is composed of
+        two files:<br><br>
+        Model architecture (json file):<input type="file" id="upload-json" /><br><br>
+        Trained weights (BIN file):<input type="file" id="upload-weights" /><br>
+      </div>
+      <div>
+      <input type="button" class="button" value="Load model" onclick="loadModel();" />
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div id="notification">
+    <p></p>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
